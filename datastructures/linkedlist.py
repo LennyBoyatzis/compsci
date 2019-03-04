@@ -1,10 +1,10 @@
-from typing import Dict, Tuple, Sequence, Any, NoReturn, Optional, SelfType
+from typing import Dict, Tuple, Sequence, Any, NoReturn, Optional
 
 
 class Node():
     def __init__(self,
                  val: Any,
-                 next_node: Optional[SelfType] = None):
+                 next_node=None):
         self.val = val
         self.next_node = next_node
 
@@ -90,5 +90,17 @@ class SingleLinkedList():
         prev_node.next_node = None
         return node.val
 
-    def insert_before(self) -> Any:
-        pass
+    def insert_before(self, target_node: Node, key: Any) -> Any:
+        """
+        Create and insert node before specified node
+        """
+        if self.empty():
+            raise Exception('Linked list is empty, unable to insert node')
+
+        current_node = self.head
+        prev_node = None
+
+        while current_node.next_node is not None:
+            prev_node = current_node
+            if current_node == target_node:
+                current_node = current_node.next_node
