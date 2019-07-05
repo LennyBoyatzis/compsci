@@ -1,0 +1,3 @@
+Machine Learning — Graphical Model Exact inference (Variable elimination, belief propagation, junction tree)
+
+In the previous article, we have learned how to represent a domain problem with a Graphical model. By discovering independence, we reduce the problem complexity to a manageable scale. In this article, we will address the second important question of making inferences.
