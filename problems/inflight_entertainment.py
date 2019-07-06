@@ -2,7 +2,7 @@ from typing import List
 
 
 def can_two_movies_fill_flight(movie_lengths: List,
-                                 flight_length: int) -> bool:
+                               flight_length: int) -> bool:
     """Determines whether there are two movies whose length is equal to flight
     length
 
