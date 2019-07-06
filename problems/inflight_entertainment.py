@@ -2,7 +2,7 @@ from typing import List
 
 
 def can_two_movies_fill_flight(movie_lengths: List,
-                               flight_length: int) -> bool:
+                                 flight_length: int) -> bool:
     """Determines whether there are two movies whose length is equal to flight
     length
 
@@ -14,14 +14,15 @@ def can_two_movies_fill_flight(movie_lengths: List,
     equal to that of the flight
     """
 
-    # Timsort: O(nlogn) worst case
-    sorted_movie_lengths = sorted(movie_lengths)
+    movie_lengths_seen = set()
 
-    # Single for loop O(n)
-    for index, value in enumerate(sorted_movie_lengths):
-        if index is not len(sorted_movie_lengths) - 1:
-            if sorted_movie_lengths[index + 1] + value == flight_length:
-                return True
+    # O(n) solution
+    for first_movie_length in movie_lengths:
+        matching_second_movie_length = flight_length - first_movie_length
+        if matching_second_movie_length in movie_lengths_seen:
+            return True
+        movie_lengths_seen.add(first_movie_length)
+
     return False
 
 
