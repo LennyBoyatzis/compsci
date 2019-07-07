@@ -1,6 +1,3 @@
-from collections import Counter
-
-
 def has_palindrome_permutation(string: str) -> bool:
     """Checks whether any permutation of an input string is a palindrome
 
