@@ -19,6 +19,8 @@ def can_two_movies_fill_flight(movie_lengths: List,
     # O(n) solution
     for first_movie_length in movie_lengths:
         matching_second_movie_length = flight_length - first_movie_length
+        # O(1) lookup to see if already in set
+        # Set is just a hash map without a value (only a key)
         if matching_second_movie_length in movie_lengths_seen:
             return True
         movie_lengths_seen.add(first_movie_length)
