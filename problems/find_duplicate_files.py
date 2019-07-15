@@ -1,7 +1,7 @@
 import os
 from typing import List, Tuple
 
-Duplicates = List[Tuple(str, str)]
+Duplicates = List[Tuple[str, str]]
 
 
 def find_duplicate_files(starting_dir: str) -> Duplicates:
@@ -13,9 +13,12 @@ def find_duplicate_files(starting_dir: str) -> Duplicates:
     Returns
         list of duplicate file path pairs
     """
-    pass
+
+    return os.listdir(starting_dir)
 
 
 if __name__ == "__main__":
-    result = find_duplicate_files()
+    working_dir = os.getcwd()
+    starting_dir = os.path.join(working_dir, 'data')
+    result = find_duplicate_files(starting_dir)
     print(f"result -> {result}")
